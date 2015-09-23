@@ -1,15 +1,15 @@
-import RPi.GPIO as GPIO
+iimport RPi.GPIO as GPIO
 import time
 
-def blink(pinA1,pinA2,pinR1,pinR2,  n=5):
+def blink(pinA1,pinA2,pinR1,pinR2, n=5):
     GPIO.setmode(GPIO.BCM)
-    GPIO.setUP(pinA1, GPIO.OUT)
-    GPIO.setUP(pinA2, GPIO.OUT)
-    GPIO.setUP(pinR1, GPIO.OUT)
-    GPIO.setUP(pinR2, GPIO.OUT)
+    GPIO.setup(pinA1, GPIO.OUT)
+    GPIO.setup(pinA2, GPIO.OUT)
+    GPIO.setup(pinR1, GPIO.OUT)
+    GPIO.setup(pinR2, GPIO.OUT)
     for i in xrange(n):
-        GPIO.output(pinA1, GPIO.HIGHT)
-        GPIO.output(pinA2, GPIO.HIGHT)
+        GPIO.output(pinA1, GPIO.HIGH)
+        GPIO.output(pinA2, GPIO.HIGH)
         GPIO.output(pinR1, GPIO.LOW)
         GPIO.output(pinR2, GPIO.LOW)
         time.sleep(1)
